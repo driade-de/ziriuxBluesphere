@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Paleta ZIRIUX - 500 Años Después */
+:root {
+  --azul-abisal: #0A192F;
+  --espuma-blanca: #F5F7FA;
+  --plastico-translucido: #2A3A4A;
+  --arena-brillante: #D4C4A8;
+  --alerta-coral: #E86A6A;
+  --vida-verde: #4A8C6F;
+}
+
+body {
+  background-color: var(--azul-abisal);
+  color: var(--espuma-blanca);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Scroll personalizado */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--plastico-translucido);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--arena-brillante);
+  border-radius: 3px;
+}
+
+/* Animación de ola */
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+.wave-animation {
+  animation: wave 2s ease-in-out infinite;
+}
