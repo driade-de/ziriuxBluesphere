@@ -1,7 +1,6 @@
 'use client'
 
 import { Suspense, useEffect, useState, useRef } from 'react'
-import { useEffect, useState, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { createClient } from '@supabase/supabase-js'
 
@@ -674,4 +673,3 @@ export default function GuardianGaiaPage() {
       <GuardianGaiaContent />
     </Suspense>
   )
-}
