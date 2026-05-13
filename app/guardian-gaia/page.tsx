@@ -1,6 +1,6 @@
 'use client'
 
-export const dynamic = 'force-dynamic';
+import { Suspense, useEffect, useState, useRef } from 'react'
 import { useEffect, useState, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { createClient } from '@supabase/supabase-js'
@@ -62,7 +62,7 @@ const habitosODS: Record<string, number[]> = {
   'proteccion_biodiversidad': [15, 14, 13]
 }
 
-export default function GuardianGaiaPage() {
+  function GuardianGaiaContent() {
   const searchParams = useSearchParams()
   const codigoURL = searchParams.get('codigo') || ''
   const [codigoGuardian, setCodigoGuardian] = useState(codigoURL)
@@ -666,4 +666,11 @@ function obtenerIcono(slug: string): string {
     aire: '🏭', temperatura: '🌡️', hielo_antartida: '❄️', nivel_mar: '🌊', hielo_artico: '🌿', oceano: '💧', biodiversidad: '🌳'
   }
   return iconos[slug] || '❓'
+  export default function GuardianGaiaPage() {
+  return (
+    <Suspense fallback={<div style={{minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center', background:'#05070a', color:'#94a3b8'}}>Cargando sistema Gaia...</div>}>
+      <GuardianGaiaContent />
+    </Suspense>
+  )
+}
 }
