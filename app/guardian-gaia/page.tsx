@@ -662,19 +662,23 @@ function determinarEstado(metrica: any): string {
 
 function obtenerIcono(slug: string): string {
   const iconos: Record<string, string> = {
-    aire: '🏭', temperatura: '🌡️', hielo_antartida: '❄️', nivel_mar: '🌊', hielo_artico: '🌿', oceano: '💧', biodiversidad: '🌳'
+    aire: '🏭',
+    temperatura: '🌡️',
+    hielo_antartida: '❄️',
+    nivel_mar: '🌊',
+    hielo_artico: '🌿',
+    oceano: '💧',
+    biodiversidad: '🌳'
   }
   return iconos[slug] || '❓'
 }
- export default function GuardianGaiaPage() {
+
+export default function GuardianGaiaPage() {
   return (
     <Suspense fallback={<div style={{minHeight:'100vh', display:'flex', alignItems:'center', justifyContent:'center', background:'#05070a', color:'#94a3b8'}}>Cargando sistema Gaia...</div>}>
-
       <GuardianGaiaContent />
-
     </Suspense>
-
   )
-  }
+}
 
 
